@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\node_modules\\jquery\\dist",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\protected",
+    "\\src\\app\\protected\\menu"
   ],
-  "SelectedNode": "\\src\\app\\app.component.html",
+  "SelectedNode": "\\src\\app\\protected\\menu\\menu.component.html",
   "PreviewInSolutionExplorer": false
 }

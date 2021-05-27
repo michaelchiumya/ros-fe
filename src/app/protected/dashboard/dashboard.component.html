@@ -1,0 +1,92 @@
+
+
+<mat-drawer-container class="dashbord-container" [hasBackdrop]="hasBackdrop.value">
+
+  <mat-drawer #drawer [mode]="mode.value">
+
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap" /></svg>
+        <span class="fs-5 fw-semibold">Collapsible</span>
+      </a>
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true" routerLink="/menu">
+            Menu
+          </button>
+          <div class="collapse show" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a mat-button (click)="openDialog()" [class]="['link-dark', 'rounded']">Add Menu</a></li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            Tables
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">Overview</a></li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+            Sales
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">New</a></li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+            Orders
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">New</a></li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="border-top my-3"></li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            Accounts
+          </button>
+          <div class="collapse" id="account-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">New...</a></li>
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <mat-form-field>
+      <mat-label>Sidenav mode</mat-label>
+      <mat-select #mode value="side">
+        <mat-option value="side">Side</mat-option>
+        <mat-option value="over">Over</mat-option>
+        <mat-option value="push">Push</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Has backdrop</mat-label>
+      <mat-select #hasBackdrop>
+        <mat-option>Unset</mat-option>
+        <mat-option [value]="true">True</mat-option>
+        <mat-option [value]="false">False</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+  </mat-drawer-content>
+</mat-drawer-container>

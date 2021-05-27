@@ -1,0 +1,32 @@
+<div class="d-grid gap-3">
+
+  <h2 mat-dialog-title>Add New Menu</h2>
+
+
+  <mat-dialog-content [formGroup]="form">
+
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name">
+      <mat-hint align="end">to uniquely  identify menu</mat-hint>
+    </mat-form-field><br />
+
+    <mat-form-field>
+      <input matInput placeholder="Type" formControlName="type">
+      <mat-hint align="end">eg Lunch, Brunch</mat-hint>
+    </mat-form-field><br />
+
+    <mat-radio-group aria-label="Select an option" formControlName="active">
+      <mat-radio-button value="1">On</mat-radio-button>
+      <mat-radio-button value="2">off</mat-radio-button>      
+    </mat-radio-group>
+    <br />
+
+    
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()"> Close </button>
+    <button class="mat-raised-button mat-primary" (click)="save()"> Save </button>
+  </mat-dialog-actions>
+
+  </div>
