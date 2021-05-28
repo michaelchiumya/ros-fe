@@ -23,6 +23,7 @@ import { DashboardComponent } from './protected/dashboard/dashboard.component';
 import { MenuComponent } from './protected/menu/menu.component';
 import { AddMenuDialogComponent } from './protected/add-menu-dialog/add-menu-dialog.component';
 import { ItemComponent } from './protected/item/item.component';
+import { TableComponent } from './protected/table/table.component';
 
 
 
@@ -36,7 +37,8 @@ import { ItemComponent } from './protected/item/item.component';
     DashboardComponent,
     MenuComponent,
     AddMenuDialogComponent,
-    ItemComponent
+    ItemComponent,
+    TableComponent
  
   
   ],

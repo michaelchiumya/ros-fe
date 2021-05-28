@@ -6,6 +6,7 @@ import { DashboardComponent } from './protected/dashboard/dashboard.component';
 import { MenuComponent } from './protected/menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {ItemComponent} from "./protected/item/item.component";
+import {TableComponent} from "./protected/table/table.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent, children:[
       { path: 'menu', component: MenuComponent },
-      { path: 'menu/item', component: ItemComponent}
+      { path: 'menu/item', component: ItemComponent},
+      { path: 'table', component: TableComponent },
       ]
   },
 
