@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './protected/dashboard/dashboard.component';
 import { MenuComponent } from './protected/menu/menu.component';
 import { AddMenuDialogComponent } from './protected/add-menu-dialog/add-menu-dialog.component';
+import { ItemComponent } from './protected/item/item.component';
 
 
 
@@ -34,7 +35,8 @@ import { AddMenuDialogComponent } from './protected/add-menu-dialog/add-menu-dia
     HomeComponent,
     DashboardComponent,
     MenuComponent,
-    AddMenuDialogComponent
+    AddMenuDialogComponent,
+    ItemComponent
  
   
   ],
