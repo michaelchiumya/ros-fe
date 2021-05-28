@@ -7,6 +7,7 @@ import { MenuComponent } from './protected/menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {ItemComponent} from "./protected/item/item.component";
 import {TableComponent} from "./protected/table/table.component";
+import {AddTableComponent} from "./protected/add-table/add-table.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'menu', component: MenuComponent },
       { path: 'menu/item', component: ItemComponent},
       { path: 'table', component: TableComponent },
+      { path: 'add-table', component: AddTableComponent },
       ]
   },
 

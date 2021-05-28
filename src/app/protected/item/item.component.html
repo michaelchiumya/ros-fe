@@ -1,0 +1,48 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="itemForm" >
+
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="name" formControlName="name">
+          <mat-hint align="end">eg Beer, BLT sandwich</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="types" formControlName="type">
+          <mat-hint align="end">eg drink, meal etc</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="price" formControlName="price">
+        </mat-form-field>
+
+        <mat-radio-group aria-label="Select an option" formControlName="active" [class]="['m-2']">
+          <mat-radio-button value="1" [class]="['m-1']">On</mat-radio-button>
+          <mat-radio-button value="0">off</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field class="example-full-width" >
+          <mat-label>Special of the day</mat-label>
+          <mat-select formControlName="sop">
+            <mat-option [value]="1">true</mat-option>
+            <mat-option [value]="0">false</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field [class]="['m-2','example-full-width']" >
+          <mat-label>description</mat-label>
+          <textarea matInput placeholder="some information about this item" formControlName="description"></textarea>
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <button mat-stroked-button color="accent" class="btn-block" (click)="itemSubmit()">Add item</button>
+
+    </form>
+  </mat-card>
+</div>
