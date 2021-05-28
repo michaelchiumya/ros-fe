@@ -16,24 +16,15 @@ export class AddMenuDialogComponent implements OnInit {
     active: new FormControl(),
     type: new FormControl()
   });
- 
+
 
   constructor(
        private fb: FormBuilder,
     private dialogRef: MatDialogRef<DashboardComponent>,
     @Inject(MAT_DIALOG_DATA) { id, name, active, type }: Menu)
-  {  
-   
+  {  }
 
-
-
-  }
-
-ngOnInit() {
-
-  
-    
-  }
+  ngOnInit() {  }
 
   save() {
     this.dialogRef.close(this.form.value);

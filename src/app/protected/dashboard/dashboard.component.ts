@@ -16,16 +16,15 @@ export class DashboardComponent implements OnInit {
   openDialog() {
 
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose =true;
+    dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
+    dialogConfig.data = {};
+    dialogConfig.height ="600";
 
-    dialogConfig.data = {
-      id: 1,
-      title: 'Angular For Beginners'
-    };
+
 
     this.dialog.open(AddMenuDialogComponent, dialogConfig);
-   
+
     const dialogRef = this.dialog.open(AddMenuDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(
