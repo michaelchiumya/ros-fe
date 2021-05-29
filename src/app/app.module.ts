@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MenuService } from './services/menu.service';
+import { ItemService } from './services/item.service'
 
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
@@ -67,7 +68,8 @@ import { AddTableComponent } from './protected/add-table/add-table.component';
 
   ],
   providers: [
-    MenuService
+    MenuService,
+    ItemService
   ],
   bootstrap: [AppComponent],
   entryComponents: [AddMenuDialogComponent]

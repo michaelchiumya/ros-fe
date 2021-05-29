@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError} from 'rxjs/operators';
 import {Menu} from "../models/menu.model";
 
 @Injectable({
@@ -10,7 +9,9 @@ import {Menu} from "../models/menu.model";
 
 export class MenuService {
 
+  //variable object to store request header values
   headers = new HttpHeaders().set('Content-Type', 'application/json');
+  //variable object to store url value
   apiUrl = 'http://localhost:3000/menu';
 
 
@@ -18,53 +19,30 @@ export class MenuService {
     this.http = http;
   }
 
+  //get menu resource
   get(): Observable<Menu[]>  {
     return this.http.get<Menu[]>(this.apiUrl);
   }
 
-  // Create
-  create(data: Menu): Observable<any> {
-    let API_URL = `${this.apiUrl}/create-task`;
-    return this.http.post(API_URL, data)
-      .pipe(
-        catchError(this.error)
-      )
+  // Create menu resource
+  create(menu: Menu): Observable<any> {
+    return this.http.post(this.apiUrl, menu)
   }
 
-  // Update
+  // Update menu resource
   update(id: number, data: Menu): Observable<any> {
-    let API_URL = `${this.apiUrl}/update-task/${id}`;
-    return this.http.put(API_URL, data, {headers: this.headers}).pipe(
-      catchError(this.error)
-    )
+    return this.http.put(this.apiUrl+"/"+id, data, {headers: this.headers});
   }
 
-  // addItems
+  // addItems to menu resource
   addItem(id: number, data: Menu): Observable<any> {
-    let API_URL = `${this.apiUrl}/update-task/${id}`;
-    return this.http.put(API_URL, data, {headers: this.headers}).pipe(
-      catchError(this.error)
-    )
+    return this.http.put(this.apiUrl+"/"+id, data, {headers: this.headers});
   }
 
   // Delete
   delete(id: number): Observable<any> {
-    var API_URL = `${this.apiUrl}/delete-task/${id}`;
-    return this.http.delete(API_URL).pipe(
-      catchError(this.error)
-    )
+   // var API_URL = `${this.apiUrl}/delete-task/${id}`;
+    return this.http.delete(this.apiUrl+"/"+id);
   }
 
-
-  // Handle Errors
-  error(error: HttpErrorResponse) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    console.log(errorMessage);
-    return throwError(errorMessage);
-  }
 }

@@ -1,12 +1,13 @@
 {
   "menu": [
     {
-      "id": 1,
-      "name": "Lunch Menu",
-      "active": true,
-      "type": "Meal",
-      "description": "served week days",
-      "items": []
+      "name": "item name",
+      "active": "1",
+      "type": "drink",
+      "price": "12",
+      "sop": 0,
+      "description": "ffhfh",
+      "id": 1
     },
     {
       "id": 2,
@@ -15,7 +16,13 @@
       "type": "Meal",
       "description": "served week days",
       "items": []
+    },
+    {
+      "id": 0.6816269658471859,
+      "name": "Breakfast Menu",
+      "active": "1",
+      "type": "Food",
+      "items": []
     }
-
   ]
 }

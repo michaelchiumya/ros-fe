@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {MenuService} from "../../services/menu.service";
 
 @Component({
   selector: 'app-item',
@@ -7,7 +8,7 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-
+     error:any;
     itemForm = new FormGroup({
        name: new FormControl(),
        active: new FormControl(),
@@ -16,11 +17,18 @@ export class ItemComponent implements OnInit {
        sop: new FormControl(),
        description: new FormControl()
   });
-  constructor() { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {}
 
   itemSubmit() {
+    this.menuService.addItem(1,this.itemForm.value).subscribe(
+      res => {
+
+      },
+      error => {
+        this.error = error;
+      })
     console.log(this.itemForm.value);
   }
 
