@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MenuService } from './services/menu.service';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
@@ -41,13 +44,14 @@ import { AddTableComponent } from './protected/add-table/add-table.component';
     ItemComponent,
     TableComponent,
     AddTableComponent
- 
-  
+
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -62,10 +66,12 @@ import { AddTableComponent } from './protected/add-table/add-table.component';
     MatRadioModule
 
   ],
-  providers: [],
+  providers: [
+    MenuService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [AddMenuDialogComponent]
- 
+
 
 })
 export class AppModule { }

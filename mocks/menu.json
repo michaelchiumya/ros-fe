@@ -1,0 +1,21 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Lunch Menu",
+      "active": true,
+      "type": "Meal",
+      "description": "served week days",
+      "items": []
+    },
+    {
+      "id": 2,
+      "name": "Kids Menu",
+      "active": true,
+      "type": "Meal",
+      "description": "served week days",
+      "items": []
+    }
+
+  ]
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Menu} from "../../models/menu.model";
+import {MenuService} from "../../services/menu.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-menu',
@@ -8,15 +10,16 @@ import {Menu} from "../../models/menu.model";
 })
 export class MenuComponent implements OnInit {
 
- menu: any = undefined;
+   menus: Menu[] | undefined
 
-  constructor() { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
-     this.menu = {
-      "id": 1, "name": "menu 1", "active":false, "type": "Lunch",
-
-    }
+    this.menuService.get().subscribe(
+      res => {
+        this.menus = res;
+      }
+    );
   }
 
 }
