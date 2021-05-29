@@ -30,6 +30,7 @@ import { ItemComponent } from './protected/item/item.component';
 import { TableComponent } from './protected/table/table.component';
 import { AddTableComponent } from './protected/add-table/add-table.component';
 import { MenuItemsComponent } from './protected/menu-items/menu-items.component';
+import { OrderComponent } from './protected/order/order.component';
 
 
 
@@ -46,7 +47,8 @@ import { MenuItemsComponent } from './protected/menu-items/menu-items.component'
     ItemComponent,
     TableComponent,
     AddTableComponent,
-    MenuItemsComponent
+    MenuItemsComponent,
+    OrderComponent
 
 
   ],

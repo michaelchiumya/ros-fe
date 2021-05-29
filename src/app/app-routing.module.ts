@@ -9,21 +9,24 @@ import {ItemComponent} from "./protected/item/item.component";
 import {TableComponent} from "./protected/table/table.component";
 import {AddTableComponent} from "./protected/add-table/add-table.component";
 import {MenuItemsComponent} from "./protected/menu-items/menu-items.component";
+import {OrderComponent} from "./protected/order/order.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
 
-  {
-    path: 'dashboard', component: DashboardComponent, children:[
+
+
+  { path: 'dashboard', component: DashboardComponent, children:[
       { path: 'menu', component: MenuComponent },
       { path: 'menu/item', component: ItemComponent},
       { path: 'table', component: TableComponent },
       { path: 'menu/menu-items', component: MenuItemsComponent },
       { path: 'add-table', component: AddTableComponent },
+      { path: 'order', component: OrderComponent },
       ]
-  },
+  }
 
 ];
 
