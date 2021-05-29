@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatRadioModule } from '@angular/material/radio';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { TableComponent } from './protected/table/table.component';
 import { AddTableComponent } from './protected/add-table/add-table.component';
 import { MenuItemsComponent } from './protected/menu-items/menu-items.component';
 import { OrderComponent } from './protected/order/order.component';
+import { FrontMenuComponent } from './protected/front-menu/front-menu.component';
 
 
 
@@ -48,7 +50,8 @@ import { OrderComponent } from './protected/order/order.component';
     TableComponent,
     AddTableComponent,
     MenuItemsComponent,
-    OrderComponent
+    OrderComponent,
+    FrontMenuComponent
 
 
   ],
@@ -68,7 +71,8 @@ import { OrderComponent } from './protected/order/order.component';
     MatDialogModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatExpansionModule
 
   ],
   providers: [

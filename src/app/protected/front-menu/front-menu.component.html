@@ -1,6 +1,6 @@
 <h2>Orders</h2>
 
-<!--order button-->
+//order button
 <button mat-flat-button color="accent" [matMenuTriggerFor]="menu">Take Order <mat-icon>more_vert</mat-icon></button>
 <mat-menu #menu="matMenu" >
   <button mat-menu-item>menu 1</button>
@@ -17,20 +17,20 @@
 
       <p [class]="['my-3']">description goes here</p>
 
-        <mat-accordion>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-               add message
-              </mat-panel-title>
-            </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              add message
+            </mat-panel-title>
+          </mat-expansion-panel-header>
 
-            <mat-form-field appearance="fill">
-              <mat-label>Textarea</mat-label>
-              <textarea matInput></textarea>
-            </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
 
-      </mat-expansion-panel>
+        </mat-expansion-panel>
       </mat-accordion>
 
       <button mat-raised-button color="accent" [class]="['my-2']">Add</button>
