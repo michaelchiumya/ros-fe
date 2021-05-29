@@ -29,6 +29,7 @@ import { AddMenuDialogComponent } from './protected/add-menu-dialog/add-menu-dia
 import { ItemComponent } from './protected/item/item.component';
 import { TableComponent } from './protected/table/table.component';
 import { AddTableComponent } from './protected/add-table/add-table.component';
+import { MenuItemsComponent } from './protected/menu-items/menu-items.component';
 
 
 
@@ -44,7 +45,8 @@ import { AddTableComponent } from './protected/add-table/add-table.component';
     AddMenuDialogComponent,
     ItemComponent,
     TableComponent,
-    AddTableComponent
+    AddTableComponent,
+    MenuItemsComponent
 
 
   ],

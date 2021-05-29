@@ -18,11 +18,10 @@
       "items": []
     },
     {
-      "id": 0.6816269658471859,
-      "name": "Breakfast Menu",
-      "active": "1",
-      "type": "Food",
-      "items": []
+      "id": 0.45020583981162265,
+      "name": "new test",
+      "active": "0",
+      "type": "test"
     }
   ]
 }
