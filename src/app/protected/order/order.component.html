@@ -1,40 +1,18 @@
-<h2>Orders</h2>
-
-<!--order button-->
-<button mat-flat-button color="accent" [matMenuTriggerFor]="menu">Take Order <mat-icon>more_vert</mat-icon></button>
-<mat-menu #menu="matMenu" >
-  <button mat-menu-item>menu 1</button>
-  <button mat-menu-item>menu 2</button>
-</mat-menu>
-<br>
-
+<h2>Exams</h2>
+<p>Choose an exam and start studying.</p>
 <div class="exams">
 
   <mat-card class="example-card" class="mat-elevation-z5">
     <mat-card-content>
-      <mat-card-title>Item title</mat-card-title>
-      <mat-card-subtitle>Price</mat-card-subtitle>
-
-      <p [class]="['my-3']">description goes here</p>
-
-        <mat-accordion>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-               add message
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-
-            <mat-form-field appearance="fill">
-              <mat-label>Textarea</mat-label>
-              <textarea matInput></textarea>
-            </mat-form-field>
-
-      </mat-expansion-panel>
-      </mat-accordion>
-
-      <button mat-raised-button color="accent" [class]="['my-2']">Add</button>
-
+      <mat-card-title>exam.title</mat-card-title>
+      <mat-card-subtitle>exam.description</mat-card-subtitle>
+      <p>
+        Etiam enim purus, vehicula nec dapibus quis, egestas eu quam.
+        Nullam eleifend auctor leo, vitae rhoncus mi sodales vel.
+        Aenean fermentum laoreet volutpat. Integer quam orci,
+        molestie non nibh suscipit, faucibus euismod sapien.
+      </p>
+      <button mat-raised-button color="accent">Start Exam</button>
     </mat-card-content>
   </mat-card>
 

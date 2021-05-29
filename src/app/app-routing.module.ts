@@ -27,9 +27,9 @@ const routes: Routes = [
       { path: 'add-table', component: AddTableComponent },
       { path: 'order', component: OrderComponent },
       { path: 'front-menu', component: FrontMenuComponent },
+
       ]
   }
-
 ];
 
 @NgModule({

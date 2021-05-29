@@ -1,15 +1,6 @@
 {
   "menu": [
     {
-      "name": "item name",
-      "active": "1",
-      "type": "drink",
-      "price": "12",
-      "sop": 0,
-      "description": "ffhfh",
-      "id": 1
-    },
-    {
       "id": 2,
       "name": "Kids Menu",
       "active": true,
@@ -22,6 +13,18 @@
       "name": "new test",
       "active": "0",
       "type": "test"
+    },
+    {
+      "id": 0.08507818594140093,
+      "name": "finish testt",
+      "active": "1",
+      "type": "vv"
+    },
+    {
+      "id": 0.9001840604885729,
+      "name": "drinks menu",
+      "active": "0",
+      "type": "drinks"
     }
   ]
 }

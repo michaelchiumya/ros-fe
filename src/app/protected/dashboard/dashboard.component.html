@@ -10,29 +10,29 @@
 
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
             <li class="nav-item">
-               <button mat-button [class]="['nav-link', 'align-middle', 'px-0']" href="#menu1" data-bs-toggle="collapse" >
+               <button mat-button [class]="['nav-link', 'align-middle', 'px-0','text-muted']" href="#menu1" data-bs-toggle="collapse" >
                  <mat-icon aria-hidden="false" aria-label="Example home icon">menu_book</mat-icon>
                   <span class="ms-1 d-none d-sm-inline"> Menus</span>
               </button>
               <ul class="collapse show nav flex-column ms-1" id="menu1" data-bs-parent="#menu">
                 <li>
-                  <a (click)="openDialog()" class="nav-link px-0"> <span class="d-none d-sm-inline">Add</span> New</a>
+                  <a (click)="openDialog()" class="nav-link px-0"> <span class="d-none d-sm-inline white-text"></span> New</a>
                 </li>
                 <li>
-                  <a routerLink="menu" class="nav-link px-0"> <span class="d-none d-sm-inline">View</span> All</a>
+                  <a routerLink="menu" class="nav-link px-0"> <span [class]="['d-none', 'd-sm-inline','white-text']"> View</span></a>
                 </li>
               </ul>
            </li>
 
           <li>
-            <button mat-button [class]="['nav-link', 'px-0', 'align-middle']" routerLink="order">
+            <button mat-button [class]="['nav-link', 'px-0', 'align-middle','text-muted']" routerLink="order">
               <mat-icon aria-hidden="false" aria-label="Example home icon">tapas</mat-icon>
               <span class="ms-1 d-none d-sm-inline">Orders</span>
             </button>
           </li>
 
           <li>
-            <button mat-button href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+            <button mat-button href="#submenu3" data-bs-toggle="collapse" [class]="['nav-link', 'px-0', 'align-middle','text-muted']">
               <mat-icon aria-hidden="false" aria-label="Example home icon">auto_awesome_mosaic</mat-icon>
                 <span class="ms-1 d-none d-sm-inline">Table Management</span>
             </button>
@@ -47,43 +47,28 @@
           </li>
 
           <li>
-            <button mat-button data-bs-toggle="collapse" class="nav-link px-0 align-middle" routerLink="stats" >
+            <button mat-button data-bs-toggle="collapse" [class]="['nav-link', 'px-0', 'align-middle', 'text-muted']" routerLink="stats" >
                <mat-icon aria-hidden="false" aria-label="Example home icon">insights</mat-icon>
                <span class="ms-1 d-none d-sm-inline">Statistics</span>
             </button>
           </li>
 
           <li>
-            <button mat-button href="#submenu1" class="nav-link px-0 align-middle" data-bs-toggle="collapse">
+            <button mat-button href="#submenu1" [class]="['nav-link', 'px-0', 'align-middle', 'text-muted']" data-bs-toggle="collapse">
               <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Users</span>
             </button>
                <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                  <li>
-                   <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Add</span> New</a>
+                   <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline"></span> New</a>
                 </li>
                  <li>
-                   <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">View</span> All</a>
+                   <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline"></span> View</a>
                  </li>
                </ul>
           </li>
         </ul>
         <hr>
 
-        <div class="dropdown pb-4">
-          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-            <span class="d-none d-sm-inline mx-1">loser</span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
       </div>
     </div>
 

@@ -1,5 +1,5 @@
-<div [class]="['container','position-relative']">
-
+<div [class]="['container','mx-auto','my-auto']">
+ <h2>Login</h2>
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
@@ -13,6 +13,6 @@
   </form>
   <button mat-raised-button color="primary" routerLink="/dashboard">Login</button>
 
-  <p>Dont have an account? <span>login</span></p>
+  <p [class]="['my-2']">Dont have an account? <span routerLink="login" class="text-muted">login</span></p>
 
 </div>
