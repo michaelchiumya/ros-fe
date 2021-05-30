@@ -3,6 +3,7 @@ import {Menu} from "../../models/menu.model";
 import {MenuService} from "../../services/menu.service";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-menu',
@@ -17,13 +18,13 @@ export class MenuComponent implements OnInit {
   deleteInfo: any;
 
   constructor(
-    private menuService: MenuService,
-    private router: Router
+    private menuService: MenuService
+
   ) { }
 
   ngOnInit(): void {
     //subscribe to the observer returned from get() assign menus to response of the observable
-    this.menuService.get().subscribe(
+    this.menuService.getAll().subscribe(
       res => {
         this.menus = res;
       },
@@ -33,9 +34,7 @@ export class MenuComponent implements OnInit {
     );
   }
 
-  editItem(id: number){
-
-  }
+ //remove menu method
   remove(id: number){
     this.menuService.delete(id).subscribe(
       res => {
@@ -46,11 +45,11 @@ export class MenuComponent implements OnInit {
       }
 
     );
-    console.log("clicked.."+id);
+    console.log("removed.."+id);
+    this.refresh()
   }
+  //on refresh reinitialise the component to get fresh data from API
+  refresh(){  this.ngOnInit(); }
 
-  refresh(){
-    this.ngOnInit();
-  }
 
 }

@@ -21,9 +21,13 @@ export class MenuService {
   }
 
   //get all menu resources
-  get(): Observable<Menu[]>  {
+  getAll(): Observable<Menu[]>  {
     return this.http.get<Menu[]>(this.apiUrl + "menus");
+  }
 
+  //get all menu resources
+  get(id: number | undefined): Observable<any>  {
+    return this.http.get<any>(this.apiUrl + "menu/" + id);
   }
 
   // Create menu resource

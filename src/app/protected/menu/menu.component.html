@@ -1,13 +1,15 @@
 <div [class]="['row']">
-  <button mat-button mat-fab color="warn" (click)="refresh()">
+  <button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="refresh()">
     <mat-icon aria-hidden="false" aria-label="Example home icon">cached</mat-icon>
   </button>
 
   <!--show error if it exists-->
-  <mat-error *ngIf="error">
-    <h3>{{error.message}}</h3>
-  </mat-error>
+  <div class="alert alert-danger alert-dismissible fade show w-25 mx-auto" role="alert" *ngIf="error">
+    <strong>Error !</strong> {{error.message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 
+  <!--loop through menus from API resource-->
   <div [class]="['col']" *ngFor="let menu of menus">
 
     <mat-card class="example-card gb-light">
@@ -29,7 +31,7 @@
         <button mat-button color="warn" [routerLink]="[menu.id,'items']">
           <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
         </button>
-
+        <!--button to delete the menu by id-->
         <button mat-button  color="warn" (click)="remove(menu.id)">
           <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
         </button>

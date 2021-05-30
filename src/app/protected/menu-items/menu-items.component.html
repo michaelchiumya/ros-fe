@@ -1,24 +1,18 @@
-<h2>Menu Name </h2>
-<p>Items on the menu</p>
-<div class="exams">
+<br><h2 *ngIf="!items">No items in this menu.. </h2>
 
-  <mat-card class="example-card" class="mat-elevation-z5">
+<div class="box">
+
+  <mat-card class="example-card" class="mat-elevation-z5" *ngFor="let item of items">
     <mat-card-content>
-      <mat-card-title>exam.title</mat-card-title>
-      <mat-card-subtitle>exam.description</mat-card-subtitle>
+      <mat-card-title>{{ item.name | titlecase }}</mat-card-title>
+      <mat-card-subtitle>{{ item.price | currency}}</mat-card-subtitle>
       <p>
-        Etiam enim purus, vehicula nec dapibus quis, egestas eu quam.
-        Nullam eleifend auctor leo, vitae rhoncus mi sodales vel.
-        Aenean fermentum laoreet volutpat. Integer quam orci,
-        molestie non nibh suscipit, faucibus euismod sapien.
+        {{ item.description | titlecase}}
       </p>
-      <button mat-raised-button color="accent">Start Exam</button>
+      <button mat-raised-button color="accent">Remove</button>
     </mat-card-content>
   </mat-card>
 
 
 </div>
-<button mat-fab color="primary"
-        class="new-exam" routerLink="/new-exam">
-  <i class="material-icons">note_add</i>
-</button>
+

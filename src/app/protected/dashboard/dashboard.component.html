@@ -16,10 +16,10 @@
               </button>
               <ul class="collapse show nav flex-column ms-1" id="menu1" data-bs-parent="#menu">
                 <li>
-                  <a (click)="openDialog()" class="nav-link px-0"> <span class="d-none d-sm-inline white-text"></span> New</a>
+                  <a (click)="openDialog()" class="nav-link px-0"> <span [class]="['d-none', 'd-sm-inline','text-white']">New</span></a>
                 </li>
                 <li>
-                  <a routerLink="menu" class="nav-link px-0"> <span [class]="['d-none', 'd-sm-inline','white-text']"> View</span></a>
+                  <a routerLink="menu" class="nav-link px-0"> <span [class]="['d-none', 'd-sm-inline','text-white']"> View</span></a>
                 </li>
               </ul>
            </li>
@@ -38,10 +38,10 @@
             </button>
                   <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                      <li class="w-100">
-                       <a routerLink="add-table" class="nav-link px-0"> <span class="d-none d-sm-inline"></span> Add</a>
+                       <a routerLink="add-table" class="nav-link px-0"> <span [class]="['d-none', 'd-sm-inline','white-text']">Add</span></a>
                      </li>
                      <li>
-                     <a routerLink="table" class="nav-link px-0"> <span class="d-none d-sm-inline"></span> View</a>
+                     <a routerLink="table" class="nav-link px-0"> <span [class]="['d-none', 'd-sm-inline', 'text-white']">View</span></a>
                     </li>
                   </ul>
           </li>

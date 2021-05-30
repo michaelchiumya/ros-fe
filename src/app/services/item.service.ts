@@ -22,4 +22,9 @@ export class ItemService {
     return this.http.post<any>(`${this.apiUrl}item`, menu).pipe(map((data: any)=>{return data}));
   }
 
+  //get all item resources
+  getAll(): Observable<any[]>  {
+    return this.http.get<any[]>(this.apiUrl + "items");
+  }
+
 }

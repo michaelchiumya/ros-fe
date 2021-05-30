@@ -17,6 +17,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatRadioModule } from '@angular/material/radio';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -72,7 +74,8 @@ import { FrontMenuComponent } from './protected/front-menu/front-menu.component'
     MatSelectModule,
     MatDatepickerModule,
     MatRadioModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
 
   ],
   providers: [
