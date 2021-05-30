@@ -21,7 +21,7 @@ const routes: Routes = [
 
   { path: 'dashboard', component: DashboardComponent, children:[
       { path: 'menu', component: MenuComponent },
-      { path: 'menu/item', component: ItemComponent},
+      { path: 'menu/:id/item', component: ItemComponent},
       { path: 'table', component: TableComponent },
       { path: 'menu/menu-items', component: MenuItemsComponent },
       { path: 'add-table', component: AddTableComponent },

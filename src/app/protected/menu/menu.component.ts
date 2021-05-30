@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Menu} from "../../models/menu.model";
 import {MenuService} from "../../services/menu.service";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-menu',
@@ -15,7 +16,10 @@ export class MenuComponent implements OnInit {
   error: any;
   deleteInfo: any;
 
-  constructor(private menuService: MenuService) { }
+  constructor(
+    private menuService: MenuService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     //subscribe to the observer returned from get() assign menus to response of the observable
@@ -29,6 +33,9 @@ export class MenuComponent implements OnInit {
     );
   }
 
+  editItem(id: number){
+
+  }
   remove(id: number){
     this.menuService.delete(id).subscribe(
       res => {

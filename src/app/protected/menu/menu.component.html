@@ -18,7 +18,7 @@
         <p [class]="['text-muted']"> Visible to servers: {{ menu.active }}  </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button color="warn" routerLink="item">
+        <button mat-button color="warn" [routerLink]="[menu.id,'item']">
           <mat-icon aria-hidden="false" aria-label="Example home icon">post_add</mat-icon>
         </button>
         <button mat-button color="warn" routerLink="menu-items">

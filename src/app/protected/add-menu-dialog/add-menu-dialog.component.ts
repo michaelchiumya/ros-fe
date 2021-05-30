@@ -13,10 +13,10 @@ import {MenuService} from "../../services/menu.service";
 export class AddMenuDialogComponent implements OnInit {
 
   form = new FormGroup({
-    id: new FormControl(Math.random()),
     name: new FormControl(),
     active: new FormControl(),
-    type: new FormControl()
+    type: new FormControl(),
+    description: new FormControl(),
   });
 
   error: any;
@@ -25,22 +25,37 @@ export class AddMenuDialogComponent implements OnInit {
        private fb: FormBuilder,
        private menuService: MenuService,
     private dialogRef: MatDialogRef<DashboardComponent>,
-    @Inject(MAT_DIALOG_DATA) { id, name, active, type }: Menu)
+    @Inject(MAT_DIALOG_DATA) { id, name, active, type, description }: Menu)
   {  }
 
   ngOnInit() {  }
 
   save() {
-    this.menuService.create(this.form.value).subscribe(
-      res => {
 
-      },
-      error => {
-        this.error = error;
-      }
-    );
+    // this.form.patchValue({
+    //   active : JSON.parse(this.form.get('active')?.value)
+    // })
+    // this.menuService.create(this.form.value).subscribe(
+    //   res => {
+    //
+    //   },
+    //   error => {
+    //     this.error = error;
+    //   }
+    // );
 
-    this.dialogRef.close(this.form.value);
+    // this.dialogRef.close(this.form.value);
+    // var formData = new FormData();
+    // let active : boolean = this.form.get('active')?.value;
+    // formData.append('name',this.form.get('name')?.value);
+    // formData.append('active',  this.form.get('active')?.value);
+    // formData.append('type', this.form.get('type')?.value);
+    // formData.append('description', this.form.get('description')?.value);
+    this.form.get('active')?.setValue(Boolean(JSON.parse(this.form.get('active')?.value)));
+
+    this.menuService.create( this.form.value).subscribe( res => { }, error => { this.error = error; } );
+    //this.videoForm.reset();
+    this.dialogRef.close( this.form.value);
   }
 
   close() {

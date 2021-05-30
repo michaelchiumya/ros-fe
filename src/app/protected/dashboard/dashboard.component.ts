@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddMenuDialogComponent } from '../add-menu-dialog/add-menu-dialog.component';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,12 +10,18 @@ import { AddMenuDialogComponent } from '../add-menu-dialog/add-menu-dialog.compo
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(
+    private dialog: MatDialog,
+    private router: Router
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    //reroute to menu page as dashboard comp will always show when logged
+    this.router.navigate(['dashboard/menu']).then(r => null);
+  }
 
   openDialog() {
-
+   //initialising MatdialogConfig object
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;

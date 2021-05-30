@@ -16,9 +16,14 @@
     </mat-form-field><br />
 
     <mat-radio-group aria-label="Select an option" formControlName="active" [class]="['m-2']">
-      <mat-radio-button value="1" [class]="['m-1']">On</mat-radio-button>
-      <mat-radio-button value="0">off</mat-radio-button>
+      <mat-radio-button value="true" [class]="['m-1']">On</mat-radio-button>
+      <mat-radio-button value="false">off</mat-radio-button>
     </mat-radio-group>
+
+    <mat-form-field [class]="['m-2','example-full-width','d-flex', 'p-2']" >
+      <mat-label>description</mat-label>
+      <textarea matInput placeholder="some information about this item" formControlName="description"></textarea>
+    </mat-form-field>
 
     <mat-error *ngIf="error" [class]="['m-2']">
     <h3>Error Connecting to server..!</h3>
