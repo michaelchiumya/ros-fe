@@ -1,40 +1,40 @@
-<div class="d-flex p-2 position-relative">
+<div class="mx-auto ">
   <mat-card class="box">
-    <mat-card-header>
+    <mat-card-header class="my-5">
       <mat-card-title>Add Menu Item</mat-card-title>
     </mat-card-header>
 
     <form class="example-form" [formGroup]="itemForm" >
 
       <mat-card-content>
-        <mat-form-field class="example-full-width d-flex p-2">
+        <mat-form-field class="example-full-width">
           <input matInput placeholder="name" formControlName="name">
           <mat-hint align="end">eg Beer, BLT sandwich</mat-hint>
         </mat-form-field>
 
-        <mat-form-field class="example-full-width d-flex p-2">
+        <mat-form-field class="example-full-width">
           <input matInput placeholder="types" formControlName="type">
           <mat-hint align="end">eg drink, meal etc</mat-hint>
         </mat-form-field>
 
-        <mat-form-field class="example-full-width d-flex p-2">
+        <mat-form-field class="example-full-width">
           <input matInput placeholder="price" formControlName="price">
         </mat-form-field>
 
-        <mat-radio-group aria-label="Select an option d-flex p-2" formControlName="active" [class]="['m-2']">
-          <mat-radio-button value="1" [class]="['m-1']">On</mat-radio-button>
-          <mat-radio-button value="0">off</mat-radio-button>
+        <mat-radio-group aria-label="Select an option" formControlName="active" [class]="['example-full-width']">
+          <mat-radio-button [value]="1" [class]="['m-1']">On</mat-radio-button>
+          <mat-radio-button [value]="0" [class]="['m-1']">off</mat-radio-button>
         </mat-radio-group>
 
-        <mat-form-field class="example-full-width d-flex p-2" >
+        <mat-form-field class="example-full-width m-2" >
           <mat-label>Special of the day</mat-label>
-          <mat-select formControlName="sop">
+          <mat-select formControlName="special_of_the_day">
             <mat-option [value]="1">true</mat-option>
             <mat-option [value]="0">false</mat-option>
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field [class]="['m-2','example-full-width','d-flex', 'p-2']" >
+        <mat-form-field [class]="['m-2','example-full-width']" >
           <mat-label>description</mat-label>
           <textarea matInput placeholder="some information about this item" formControlName="description"></textarea>
         </mat-form-field>

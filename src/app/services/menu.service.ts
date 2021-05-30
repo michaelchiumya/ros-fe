@@ -37,11 +37,6 @@ export class MenuService {
     return this.http.put<any>(this.apiUrl+"menu/"+id, data, {headers: this.headers});
   }
 
-  // addItems to menu resource
-  addItem(id: number, data: Menu): Observable<any> {
-    return this.http.put<any>(this.apiUrl+"menu/"+id, data, {headers: this.headers});
-  }
-
   // Delete
   delete(id: number): Observable<any> {
    // var API_URL = `${this.apiUrl}/delete-task/${id}`;
