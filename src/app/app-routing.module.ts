@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
 
-
+ //child routes to admin dashboard
   { path: 'dashboard', component: DashboardComponent, children:[
       { path: 'menu', component: MenuComponent },
       { path: 'menu/:id/item', component: ItemComponent},

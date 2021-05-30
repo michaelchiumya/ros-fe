@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {MenuService} from "../../services/menu.service";
 import {ItemService} from "../../services/item.service";
 import {Menu} from "../../models/menu.model";
-import {Observable} from "rxjs";
-import {ActivatedRoute, Router} from "@angular/router";
+import {combineLatest, Observable} from "rxjs";
+import {ActivatedRoute, Data, ParamMap, Params, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-menu-items',
@@ -14,9 +15,8 @@ export class MenuItemsComponent implements OnInit {
 
    menu?: Observable<any>;
    items?: any;
-   menuId?: number;
+   menuId?: any;
    error?: any;
-
 
   constructor(
     private menuService: MenuService,
@@ -25,22 +25,24 @@ export class MenuItemsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.menuId = this.router.snapshot.params.id;
-    this.menuService.get(this.menuId).subscribe(
-      res => {
-        this.menu = res;
-      },
-      error => {
-        this.error = error;
-      }
-    );
 
+    this.router.paramMap.subscribe(
+      (params: ParamMap) => {
 
-  this.itemService.getAll().subscribe(
-    res => {  this.items = res;  },
-    error => { this.error = error;}
-);
-}
+         this.menuId = params.get('id');
+
+         this.menuService.get(this.menuId).subscribe(
+          res => { this.menu = res },
+          error => { this.error = error }
+        )
+
+        this.itemService.getAll().subscribe(
+          res => {  this.items = res;  },
+          error => { this.error = error;}
+        );
+
+      });
+  }
 
 
 }

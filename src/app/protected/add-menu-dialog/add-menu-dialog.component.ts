@@ -19,7 +19,8 @@ export class AddMenuDialogComponent implements OnInit {
     description: new FormControl(),
   });
 
-  error: any;
+  public error: any;
+  public response: any;
 
   constructor(
        private fb: FormBuilder,
@@ -53,9 +54,10 @@ export class AddMenuDialogComponent implements OnInit {
     // formData.append('description', this.form.get('description')?.value);
     this.form.get('active')?.setValue(Boolean(JSON.parse(this.form.get('active')?.value)));
 
-    this.menuService.create( this.form.value).subscribe( res => { }, error => { this.error = error; } );
-    //this.videoForm.reset();
-    this.dialogRef.close( this.form.value);
+    this.menuService.create( this.form.value  ).subscribe( res => { res = this.response }, error => { this.error = error } );
+
+    //output form values to console:for testing
+    this.dialogRef.close( JSON.stringify(this.form.value ));
   }
 
   close() {

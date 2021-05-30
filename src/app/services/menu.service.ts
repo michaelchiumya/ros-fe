@@ -31,9 +31,9 @@ export class MenuService {
   }
 
   // Create menu resource
-  create(menu: any): Observable<any> {
+  create(menu: Menu): Observable<any> {
 
-    return this.http.post<any>(`${this.apiUrl}menu`, menu).pipe(map((data: any)=>{return data}));
+    return this.http.post<Menu>(`${this.apiUrl}menu`, menu, {headers: this.headers}).pipe(map((data: any)=>{return data}));
   }
 
   // Update menu resource
