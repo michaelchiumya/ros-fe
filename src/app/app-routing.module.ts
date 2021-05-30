@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: 'menu', component: MenuComponent },
       { path: 'menu/:id/item', component: ItemComponent},
       { path: 'table', component: TableComponent },
-      { path: 'menu/menu-items', component: MenuItemsComponent },
+      { path: 'menu/:id/items', component: MenuItemsComponent },
       { path: 'add-table', component: AddTableComponent },
       { path: 'order', component: OrderComponent },
       { path: 'front-menu', component: FrontMenuComponent },
