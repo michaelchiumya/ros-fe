@@ -7,26 +7,26 @@
     <form class="example-form" [formGroup]="itemForm" >
 
       <mat-card-content>
-        <mat-form-field class="example-full-width">
+        <mat-form-field [class]="['example-full-width']" appearance="fill" [color]="['warn']">
           <input matInput placeholder="name" formControlName="name">
           <mat-hint align="end">eg Beer, BLT sandwich</mat-hint>
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width" appearance="fill" [color]="['warn']">
           <input matInput placeholder="types" formControlName="type">
           <mat-hint align="end">eg drink, meal etc</mat-hint>
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="price" formControlName="price">
-        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" [color]="['warn']">
+          <input type="number" matInput placeholder="price" formControlName="price">
+        </mat-form-field><br>
 
-        <mat-radio-group aria-label="Select an option" formControlName="active" [class]="['example-full-width']">
+        <mat-radio-group aria-label="Select an option" formControlName="active" [class]="['example-full-width','m-2']">
           <mat-radio-button [value]="1" [class]="['m-1']">On</mat-radio-button>
           <mat-radio-button [value]="0" [class]="['m-1']">off</mat-radio-button>
-        </mat-radio-group>
+        </mat-radio-group><br>
 
-        <mat-form-field class="example-full-width m-2" >
+        <mat-form-field [class]="['example-full-width', 'm-2']" appearance="fill" [color]="['warn']">
           <mat-label>Special of the day</mat-label>
           <mat-select formControlName="special_of_the_day">
             <mat-option [value]="1">true</mat-option>
@@ -34,7 +34,7 @@
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field [class]="['m-2','example-full-width']" >
+        <mat-form-field [class]="['m-2','example-full-width']" appearance="fill" [color]="['warn']">
           <mat-label>description</mat-label>
           <textarea matInput placeholder="some information about this item" formControlName="description"></textarea>
         </mat-form-field>
@@ -46,7 +46,7 @@
 
       </mat-card-content>
 
-      <button mat-stroked-button color="accent" class="btn-block" (click)="itemSubmit()">Add item</button>
+      <button mat-stroked-button color="warn" class="btn-block" (click)="itemSubmit()">Add item</button>
 
     </form>
   </mat-card>

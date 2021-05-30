@@ -13,8 +13,8 @@ import {ActivatedRoute, Data, ParamMap, Params, Router} from "@angular/router";
 })
 export class MenuItemsComponent implements OnInit {
 
-   menu?: Observable<any>;
-   items?: any;
+   menu?: any[];
+   items?: any[];
    menuId?: any;
    error?: any;
 
@@ -33,16 +33,11 @@ export class MenuItemsComponent implements OnInit {
 
          this.menuService.get(this.menuId).subscribe(
           res => { this.menu = res },
-          error => { this.error = error }
-        )
-
-        this.itemService.getAll().subscribe(
-          res => {  this.items = res;  },
-          error => { this.error = error;}
-        );
-
-      });
-  }
+          error => { this.error = error }       )
 
 
+  })
+
+
+}
 }

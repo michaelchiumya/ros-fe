@@ -1,18 +1,18 @@
-<div [class]="['container','mx-auto','my-auto']">
- <h2>Login</h2>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
+<div [class]="['container','mx-auto']">
+ <h2 [class]="['my-5']">Login</h2>
+  <form>
+    <mat-form-field class="example-full-width" appearance="fill" [color]="['warn']">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="Email">
+      <input type="email" matInput placeholder="Email">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" appearance="fill" [color]="['warn']">
       <mat-label>Password</mat-label>
-      <input matInput placeholder="password">
+      <input type="password" matInput placeholder="password" >
     </mat-form-field>
   </form>
-  <button mat-raised-button color="primary" routerLink="/dashboard">Login</button>
+  <button mat-raised-button color="warn" routerLink="/dashboard">Login</button>
 
-  <p [class]="['my-2']">Dont have an account? <span routerLink="login" class="text-muted">login</span></p>
+  <p [class]="['my-4']">Dont have an account for your business? <a routerLink="/signup" class="text-danger">signup</a></p>
 
 </div>

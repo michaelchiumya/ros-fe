@@ -9,8 +9,14 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
+  <!--show error if it exists-->
+  <div class="alert alert-warning alert-dismissible fade show w-25 mx-auto" role="alert" *ngIf="menus==null">
+    <strong>No data !</strong> No menus were added...
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
   <!--loop through menus from API resource-->
-  <div [class]="['col']" *ngFor="let menu of menus">
+  <div [class]="['col-sm-6','my-2']" *ngFor="let menu of menus">
 
     <mat-card class="example-card gb-light">
       <mat-card-header>

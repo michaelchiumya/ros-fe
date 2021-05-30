@@ -1,27 +1,27 @@
-<div [class]="['container','position-relative']">
+<div [class]="['container','mx-auto']">
   <h2>Signup</h2>
-  <form class="example-form">
+  <form [class]="['my-5']">
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" appearance="fill" [color]="['warn']">
       <mat-label>Business Name</mat-label>
       <input matInput placeholder="Business name">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" ppearance="fill" [color]="['warn']">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="Email">
+      <input type="email" matInput placeholder="Email">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" ppearance="fill" [color]="['warn']">
       <mat-label>Password</mat-label>
-      <input matInput placeholder="password">
+      <input type="password" matInput placeholder="password">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" ppearance="fill" [color]="['warn']">
       <mat-label>Confirm Password</mat-label>
-      <input matInput placeholder="confirm password">
+      <input type="password" matInput placeholder="confirm password">
     </mat-form-field>
   </form>
-  <button mat-raised-button color="primary">Sign up</button>
+  <button mat-raised-button color="warn">Sign up</button>
 </div>
 
