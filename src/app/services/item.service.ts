@@ -8,18 +8,17 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ItemService {
 
-  //variable object to store url value
-  private apiUrl = 'https://rosbe.herokuapp.com/api/v1/';
+  //variable object to store url value (remote:'https://rosbe.herokuapp.com/api/v1/')
+  private apiUrl = 'http://127.0.0.1:8080/api/v1/';
 
   constructor(
-    private http :HttpClient,
-
+    private http :HttpClient
   ) { }
 
   // Create menu resource
-  create(menu: any): Observable<any> {
+  create(item: any): Observable<any> {
 
-    return this.http.post<any>(`${this.apiUrl}item`, menu).pipe(map((data: any)=>{return data}));
+    return this.http.post<any>(`${this.apiUrl}item`, item, {}).pipe(map((data: any)=>{return data}));
   }
 
   //get all item resources

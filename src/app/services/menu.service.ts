@@ -13,7 +13,7 @@ export class MenuService {
   //variable object to store request header values
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   //variable object to store url value
-  private apiUrl = 'https://rosbe.herokuapp.com/api/v1/';
+  private apiUrl = 'http://127.0.0.1:8080/api/v1/';
 
 
   constructor(private http: HttpClient) {
@@ -31,9 +31,8 @@ export class MenuService {
   }
 
   // Create menu resource
-  create(menu: Menu): Observable<any> {
-
-    return this.http.post<Menu>(`${this.apiUrl}menu`, menu, {headers: this.headers}).pipe(map((data: any)=>{return data}));
+  create(menu: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}menu`, menu);
   }
 
   // Update menu resource
