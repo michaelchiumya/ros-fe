@@ -11,9 +11,9 @@ import {map} from "rxjs/operators";
 export class MenuService {
 
   //variable object to store request header values
-  private headers = new HttpHeaders().set('Content-Type', 'application/json');
+  private headers = new HttpHeaders().set('Content-Typep ', 'application/json');
   //variable object to store url value
-  private apiUrl = 'http://127.0.0.1:8080/api/v1/';
+  private apiUrl = 'https://rosbe.herokuapp.com/api/v1/';
 
 
   constructor(private http: HttpClient) {

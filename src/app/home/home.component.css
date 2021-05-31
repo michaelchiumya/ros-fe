@@ -63,7 +63,6 @@
   left: 50%;
   top: 50%;
   margin: -20px 0px 0px -20px;
-  background: transparent url('../../assets/images/bg.png') no-repeat 50% 55%;
   transition: all 0.3s linear;
 }
 .a-btn:hover{
