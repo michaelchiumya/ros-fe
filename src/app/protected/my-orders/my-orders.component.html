@@ -1,26 +1,27 @@
 <div [class]="['box']">
 
   <table class="table caption-top">
-    <caption></caption>
+    <caption>Table name</caption>
+    <caption>Time: date</caption>
     <thead>
     <tr>
-      <th scope="col">#</th>
+
       <th scope="col">Name</th>
       <th scope="col">quantity</th>
-
+      <th scope="col ">Note</th>
     </tr>
     </thead>
     <tbody>
     <tr  *ngFor="let item of items, let i = index">
-      <th scope="row">{{ i + 1 }}</th>
+
       <td>{{ item.name }}</td>
       <td>{{ item.quantity }}</td>
+      <td [class]="['text-bold', 'text-danger']" >{{ item.quantity }}</td>
 
 
     </tr>
     </tbody>
   </table>
-
-  <button  mat-raised-button color="warn" [class]="['my-2']" (click)="clear()" color="warn"> clear </button>
-
+  <button  mat-raised-button color="warn" [class]="['mx-2']" (click)="clear()" color="warn"> cancel </button>
+  <button  mat-raised-button color="success" [class]="['mx-2']" (click)="clear()" color="warn"> make order </button>
 </div>

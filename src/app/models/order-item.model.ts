@@ -1,12 +1,13 @@
-import { CartItem } from 'ng-shopping-cart';
+import {CartItem} from 'ng-shopping-cart';
 
 export class OrderItem extends CartItem {
 
-  id: number | undefined;
-  name: string | undefined;
-  price: number | undefined;
-  message: string | undefined;
-  quantity: number | undefined;
+
+  id: number ;
+  name: string ;
+  price: number ;
+  message: string ;
+  quantity: number = 1; //starting point before similar item is added
 
   constructor(itemData: any) {
     super()
@@ -14,10 +15,15 @@ export class OrderItem extends CartItem {
     this.name = itemData.name
     this.price = itemData.price
     this.message = itemData.message
-    this.quantity = itemData.quantity
+
+  }
+
+  setId(id :any){
+    this.id = id
   }
 
   getId(): any {
+    return this.id
   }
 
   getImage(): string {
@@ -25,22 +31,18 @@ export class OrderItem extends CartItem {
   }
 
   getName(): string {
-    return "";
+    return <string>this.name;
   }
 
   getPrice(): number {
-    return 0;
+    return this.price;
   }
 
   getQuantity(): number {
-    return 0;
+    return this.quantity;
   }
-
   setQuantity(quantity: number): void {
+    this.quantity = this.quantity + quantity
   }
 
-
-  setMessage(orderMessage: string | undefined) {
-    this.message = orderMessage;
-  }
 }

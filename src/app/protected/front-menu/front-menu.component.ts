@@ -45,8 +45,10 @@ export class FrontMenuComponent implements OnInit {
   addToOrder(item: OrderItem){
 // New item with some values set
     const orderItem = new OrderItem(item)
+    let newId = Math.random() * 1000;
+    orderItem.setId(item.id + newId)
     this.cartService.addItem(orderItem)
-    console.log( JSON.stringify( orderItem.getImage()))
+    console.log( JSON.stringify( orderItem))
   }
 
   openDialog() {
