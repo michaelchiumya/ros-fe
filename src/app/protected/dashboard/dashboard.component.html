@@ -32,6 +32,13 @@
           </li>
 
           <li>
+            <button mat-button [class]="['nav-link', 'px-0', 'align-middle','text-muted']" routerLink="front-menu">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">point_of_sale</mat-icon>
+              <span class="ms-1 d-none d-sm-inline">Make order</span>
+            </button>
+          </li>
+
+          <li>
             <button mat-button href="#submenu3" data-bs-toggle="collapse" [class]="['nav-link', 'px-0', 'align-middle','text-muted']">
               <mat-icon aria-hidden="false" aria-label="Example home icon">auto_awesome_mosaic</mat-icon>
                 <span class="ms-1 d-none d-sm-inline">Table Management</span>

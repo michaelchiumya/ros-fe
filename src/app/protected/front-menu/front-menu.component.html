@@ -1,20 +1,25 @@
-<h2>Orders</h2>
 
-<button mat-flat-button color="accent" [matMenuTriggerFor]="menu">Take Order <mat-icon>more_vert</mat-icon></button>
-<mat-menu #menu="matMenu" >
-  <button mat-menu-item>menu 1</button>
-  <button mat-menu-item>menu 2</button>
+<h2>Make Orders</h2>
+
+<!--option to select from menu list-->
+<button mat-flat-button color="warn" [matMenuTriggerFor]=" trigger" [class]="['mb-3']">Take Order <mat-icon>more_vert</mat-icon></button>
+
+<mat-menu #trigger="matMenu"  >
+   <ul *ngFor="let mn of menus">
+      <li><button mat-menu-item (click)="displayItems(mn.id)"> {{ mn['name'] }}</button></li>
+   </ul>
+
+
 </mat-menu>
 <br>
 
-<div class="exams">
+<div class="box" *ngFor="let item of items">
 
   <mat-card class="example-card" class="mat-elevation-z5">
     <mat-card-content>
-      <mat-card-title>Item title</mat-card-title>
-      <mat-card-subtitle>Price</mat-card-subtitle>
-
-      <p [class]="['my-3']">description goes here</p>
+      <mat-card-title>{{ item.name }}</mat-card-title>
+      <mat-card-subtitle>{{ item.price | currency }}</mat-card-subtitle>
+      <p [class]="['my-3']">{{ item.description }}</p>
 
       <mat-accordion>
         <mat-expansion-panel>
@@ -24,7 +29,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
 
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" color="warn">
             <mat-label>Textarea</mat-label>
             <textarea matInput></textarea>
           </mat-form-field>
@@ -32,14 +37,15 @@
         </mat-expansion-panel>
       </mat-accordion>
 
-      <button mat-raised-button color="accent" [class]="['my-2']">Add</button>
+      <button mat-raised-button color="warn" [class]="['my-2']">Add</button>
 
     </mat-card-content>
   </mat-card>
 
 
 </div>
-<button mat-fab color="primary"
-        class="new-exam" routerLink="/new-exam">
-  <i class="material-icons">note_add</i>
+
+<br>
+<button mat-fab color="warn" [class]="['new-exam']" routerLink="/new-exam">
+  <i class="material-icons">preview</i>
 </button>

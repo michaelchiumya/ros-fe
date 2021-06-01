@@ -1,0 +1,22 @@
+div.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+
+button.new-box {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+}
+div.view-container {
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 940px;
+}
+
+@media (max-width: 720px) {
+  div.box{
+    grid-template-columns: 1fr;
+  }
+}
