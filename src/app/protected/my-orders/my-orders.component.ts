@@ -25,11 +25,14 @@ export class MyOrdersComponent implements OnInit {
   }
 
   addItemToOrder(id: any) {
-    let amount = this.cartService.getItem(id).getQuantity();
-
+    let item = this.cartService.getItem(id);
+    let quantity = item.getQuantity();
+    item.setQuantity(quantity++)
   }
 
   removeItemToOrder(id: any) {
-    this.cartService.entries()
+    let item = this.cartService.getItem(id);
+    let quantity = item.getQuantity();
+    item.setQuantity(quantity--)
   }
 }

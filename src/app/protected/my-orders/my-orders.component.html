@@ -16,14 +16,14 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{item.name }}</td>
       <td>{{item.quantity }}</td>
-      <td><button mat-menu-item (click)="addItemToOrder(item.id)" color="warn"> clear </button></td>
-      <td><button mat-menu-item (click)="removeItemToOrder(item.id)" color="warn"> clear </button></td>
+      <td><button  mat-raised-button color="warn" [class]="['my-2']" (click)="addItemToOrder(item.id)" color="warn"> add </button></td>
+      <td><button  mat-raised-button color="warn" [class]="['my-2']" (click)="removeItemToOrder(item.id)" color="warn"> remove </button></td>
 
 
     </tr>
     </tbody>
   </table>
 
-  <button mat-menu-item (click)="clear()" color="warn"> clear </button>
+  <button  mat-raised-button color="warn" [class]="['my-2']" (click)="clear()" color="warn"> clear </button>
 
 </div>

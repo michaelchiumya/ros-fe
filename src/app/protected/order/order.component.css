@@ -1,10 +1,10 @@
-div.exams {
+div.box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
 }
 
-button.new-exam {
+button.new-box {
   position: fixed;
   bottom: 15px;
   right: 15px;
@@ -16,7 +16,7 @@ div.view-container {
 }
 
 @media (max-width: 720px) {
-  div.exams {
+  div.box {
     grid-template-columns: 1fr;
   }
 }

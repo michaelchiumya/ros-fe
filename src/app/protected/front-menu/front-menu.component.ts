@@ -49,8 +49,6 @@ export class FrontMenuComponent implements OnInit {
     console.log( JSON.stringify( orderItem.getImage()))
   }
 
-
-
   openDialog() {
     const dialogRef = this.dialog.open(MyOrdersComponent, {
       height: '400px',
