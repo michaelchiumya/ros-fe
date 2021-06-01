@@ -15,7 +15,7 @@
     <tr  *ngFor="let item of items, let i = index">
 
       <td>{{ item.name }}</td>
-      <td>{{ item.price | currency }}</td>
+      <td>{{ item.price | currency:'EUR' }}</td>
       <td [class]="['text-bold', 'text-danger']" >{{ item.quantity }}</td>
 
     </tr>

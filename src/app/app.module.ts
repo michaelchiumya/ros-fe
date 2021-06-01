@@ -101,7 +101,8 @@ import { OrderItem} from "./models/order-item.model";
   ],
   providers: [
     MenuService,
-    ItemService
+    ItemService,
+
   ],
   bootstrap: [AppComponent],
   entryComponents: [
