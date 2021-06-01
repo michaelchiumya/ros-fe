@@ -4,6 +4,8 @@ import {MenuService} from "../../services/menu.service";
 import {Menu} from "../../models/menu.model";
 import {OrderItem} from "../../models/order-item.model";
 import {BaseCartItem, CartService} from "ng-shopping-cart";
+import {MatDialog} from "@angular/material/dialog";
+import {MyOrdersComponent} from "../my-orders/my-orders.component";
 
 @Component({
   selector: 'app-front-menu',
@@ -16,11 +18,13 @@ export class FrontMenuComponent implements OnInit {
   public menus: Menu[] | undefined
   public error: any
   public orderMessage: string | undefined
+  message: any;
 
   constructor(
     private itemService: ItemService,
     private menuService: MenuService,
-    private cartService: CartService<BaseCartItem>
+    private cartService: CartService<BaseCartItem>,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -39,11 +43,22 @@ export class FrontMenuComponent implements OnInit {
   }
 
   addToOrder(item: OrderItem){
-
 // New item with some values set
     const orderItem = new BaseCartItem(item);
-
     this.cartService.addItem(orderItem)
-    console.log( JSON.stringify( orderItem))
+    console.log( JSON.stringify( orderItem.getImage()))
+  }
+
+
+
+  openDialog() {
+    const dialogRef = this.dialog.open(MyOrdersComponent, {
+      height: '400px',
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

@@ -1,0 +1,29 @@
+<div [class]="['box']">
+
+  <table class="table caption-top">
+    <caption></caption>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">quantity</th>
+      <th scope="col">Add</th>
+      <th scope="col">Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let item of items, let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{item.name }}</td>
+      <td>{{item.quantity }}</td>
+      <td><button mat-menu-item (click)="addItemToOrder(item.id)" color="warn"> clear </button></td>
+      <td><button mat-menu-item (click)="removeItemToOrder(item.id)" color="warn"> clear </button></td>
+
+
+    </tr>
+    </tbody>
+  </table>
+
+  <button mat-menu-item (click)="clear()" color="warn"> clear </button>
+
+</div>

@@ -16,8 +16,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatRadioModule } from '@angular/material/radio';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatExpansionModule} from '@angular/material/expansion';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 import {ShoppingCartModule} from 'ng-shopping-cart'; // <-- Import the module class
 
@@ -38,8 +39,10 @@ import { AddTableComponent } from './protected/add-table/add-table.component';
 import { MenuItemsComponent } from './protected/menu-items/menu-items.component';
 import { OrderComponent } from './protected/order/order.component';
 import { FrontMenuComponent } from './protected/front-menu/front-menu.component';
+import { MyOrdersComponent } from './protected/my-orders/my-orders.component';
 
 import { OrderItem} from "./models/order-item.model";
+
 
 
 @NgModule({
@@ -57,7 +60,8 @@ import { OrderItem} from "./models/order-item.model";
     AddTableComponent,
     MenuItemsComponent,
     OrderComponent,
-    FrontMenuComponent
+    FrontMenuComponent,
+    MyOrdersComponent
   ],
 
   imports: [
@@ -69,6 +73,10 @@ import { OrderItem} from "./models/order-item.model";
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
+
+
+
+
     MatMenuModule,
     MatButtonModule,
     MatSidenavModule,
@@ -89,13 +97,17 @@ import { OrderItem} from "./models/order-item.model";
       }
     }),
 
+
   ],
   providers: [
     MenuService,
     ItemService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AddMenuDialogComponent]
+  entryComponents: [
+    AddMenuDialogComponent,
+    MyOrdersComponent
+  ]
 
 
 })
