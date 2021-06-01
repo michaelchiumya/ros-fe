@@ -24,6 +24,10 @@ export class MyOrdersComponent implements OnInit {
     this.cartService.clear()
   }
 
+  makeOrder(){
+    window.print();
+  }
+
   addItemToOrder(id: any) { }
 
   removeItemToOrder(id: any) {  }
