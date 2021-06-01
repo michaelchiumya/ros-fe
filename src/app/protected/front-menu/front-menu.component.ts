@@ -23,7 +23,7 @@ export class FrontMenuComponent implements OnInit {
   constructor(
     private itemService: ItemService,
     private menuService: MenuService,
-    private cartService: CartService<BaseCartItem>,
+    private cartService: CartService<OrderItem>,
     public dialog: MatDialog
   ) { }
 
@@ -44,7 +44,7 @@ export class FrontMenuComponent implements OnInit {
 
   addToOrder(item: OrderItem){
 // New item with some values set
-    const orderItem = new BaseCartItem(item);
+    const orderItem = new OrderItem(item)
     this.cartService.addItem(orderItem)
     console.log( JSON.stringify( orderItem.getImage()))
   }

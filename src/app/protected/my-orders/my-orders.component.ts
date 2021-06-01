@@ -24,15 +24,7 @@ export class MyOrdersComponent implements OnInit {
     this.cartService.clear()
   }
 
-  addItemToOrder(id: any) {
-    let item = this.cartService.getItem(id);
-    let quantity = item.getQuantity();
-    item.setQuantity(quantity++)
-  }
+  addItemToOrder(id: any) { }
 
-  removeItemToOrder(id: any) {
-    let item = this.cartService.getItem(id);
-    let quantity = item.getQuantity();
-    item.setQuantity(quantity--)
-  }
+  removeItemToOrder(id: any) {  }
 }
