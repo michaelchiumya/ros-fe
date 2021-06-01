@@ -1,5 +1,3 @@
-.add-to-cart {  background-color: red; }
-.add-to-cart-button {
-  background-color: red;
+*{
+  transition: all 0.3s linear;
 }
-
