@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ItemService} from "../../services/item.service";
 import {MenuService} from "../../services/menu.service";
 import {Menu} from "../../models/menu.model";
-import {OrderItem} from "../../models/order-item.model";
-import {BaseCartItem, CartService} from "ng-shopping-cart";
+import { MyCartItem } from "../../models/my-cart-item.model";
+import { CartService} from "ng-shopping-cart";
 import {MatDialog} from "@angular/material/dialog";
 import {MyOrdersComponent} from "../my-orders/my-orders.component";
 
@@ -23,7 +23,7 @@ export class FrontMenuComponent implements OnInit {
   constructor(
     private itemService: ItemService,
     private menuService: MenuService,
-    private cartService: CartService<OrderItem>,
+    private cartService: CartService<MyCartItem>,
     public dialog: MatDialog
   ) { }
 
@@ -42,9 +42,9 @@ export class FrontMenuComponent implements OnInit {
     )
   }
 
-  addToOrder(item: OrderItem){
+  addToOrder(item: MyCartItem){
 // New item with some values set
-    const orderItem = new OrderItem(item)
+    const orderItem = new MyCartItem(item)
     let newId = Math.random() * 1000;
     orderItem.setId(item.id + newId)
     this.cartService.addItem(orderItem)

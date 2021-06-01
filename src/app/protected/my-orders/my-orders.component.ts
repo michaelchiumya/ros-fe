@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BaseCartItem, CartService} from "ng-shopping-cart";
-
+import { OrderService} from "../../services/order.service";
 
 @Component({
   selector: 'app-my-orders',
@@ -12,7 +12,9 @@ export class MyOrdersComponent implements OnInit {
   public items: BaseCartItem[] | undefined;
 
   constructor(
-    private cartService: CartService<BaseCartItem>
+    private cartService: CartService<BaseCartItem>,
+    private orderService: OrderService
+
   ) { }
 
   ngOnInit(): void {
@@ -21,11 +23,13 @@ export class MyOrdersComponent implements OnInit {
 
 
   clear() {
+   console.log( this.cartService.getItems());
     this.cartService.clear()
   }
 
   makeOrder(){
-    window.print();
+  this.orderService.create(this.items)
+    //window.print();
   }
 
   addItemToOrder(id: any) { }

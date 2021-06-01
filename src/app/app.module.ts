@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MenuService } from './services/menu.service';
 import { ItemService } from './services/item.service'
+import { OrderService } from './services/order.service'
+
 
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
@@ -41,7 +43,7 @@ import { OrderComponent } from './protected/order/order.component';
 import { FrontMenuComponent } from './protected/front-menu/front-menu.component';
 import { MyOrdersComponent } from './protected/my-orders/my-orders.component';
 
-import { OrderItem} from "./models/order-item.model";
+import { MyCartItem } from "./models/my-cart-item.model";
 
 
 
@@ -89,7 +91,7 @@ import { OrderItem} from "./models/order-item.model";
     MatExpansionModule,
     MatSnackBarModule,
     ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
-      itemType: OrderItem, // <-- Configuration is optional
+      itemType: MyCartItem, // <-- Configuration is optional
       serviceType: 'localStorage',
       serviceOptions: {
         storageKey: 'NgShoppingCart',
@@ -102,7 +104,7 @@ import { OrderItem} from "./models/order-item.model";
   providers: [
     MenuService,
     ItemService,
-
+    OrderService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
