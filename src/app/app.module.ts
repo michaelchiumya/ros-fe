@@ -19,6 +19,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+import {ShoppingCartModule} from 'ng-shopping-cart'; // <-- Import the module class
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,11 +39,12 @@ import { MenuItemsComponent } from './protected/menu-items/menu-items.component'
 import { OrderComponent } from './protected/order/order.component';
 import { FrontMenuComponent } from './protected/front-menu/front-menu.component';
 
-
+import { OrderItem} from "./models/order-item.model";
 
 
 @NgModule({
   declarations: [
+
     AppComponent,
     SignUpComponent,
     LoginComponent,
@@ -54,10 +58,10 @@ import { FrontMenuComponent } from './protected/front-menu/front-menu.component'
     MenuItemsComponent,
     OrderComponent,
     FrontMenuComponent
-
-
   ],
+
   imports: [
+
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -75,7 +79,15 @@ import { FrontMenuComponent } from './protected/front-menu/front-menu.component'
     MatDatepickerModule,
     MatRadioModule,
     MatExpansionModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
+      itemType: OrderItem, // <-- Configuration is optional
+      serviceType: 'localStorage',
+      serviceOptions: {
+        storageKey: 'NgShoppingCart',
+        clearOnError: true
+      }
+    }),
 
   ],
   providers: [

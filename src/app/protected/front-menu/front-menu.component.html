@@ -31,13 +31,13 @@
 
           <mat-form-field appearance="fill" color="warn">
             <mat-label>Textarea</mat-label>
-            <textarea matInput></textarea>
+            <textarea matInput #messege></textarea>
           </mat-form-field>
 
         </mat-expansion-panel>
       </mat-accordion>
 
-      <button mat-raised-button color="warn" [class]="['my-2']">Add</button>
+      <button mat-raised-button color="warn" [class]="['my-2']" (click)="addToOrder(item)">Add</button>
 
     </mat-card-content>
   </mat-card>
@@ -49,3 +49,11 @@
 <button mat-fab color="warn" [class]="['new-exam']" routerLink="/new-exam">
   <i class="material-icons">preview</i>
 </button>
+<br>
+
+<cart-view [customEmptyContent]="true">
+  <div class="my-empty-cart-view">
+    <span style="font-size: 36px;" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+    Your cart is empty
+  </div>
+</cart-view>
