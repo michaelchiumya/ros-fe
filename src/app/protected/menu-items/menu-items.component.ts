@@ -31,13 +31,13 @@ export class MenuItemsComponent implements OnInit {
 
          this.menuId = params.get('id');
 
-         this.menuService.get(this.menuId).subscribe(
-          res => { this.menu = res },
+         this.itemService.getByMenu(this.menuId).subscribe(
+          res => { this.items = res },
           error => { this.error = error }       )
 
 
   })
-
+ console.log(this.items)
 
 }
 }

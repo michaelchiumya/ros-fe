@@ -18,7 +18,7 @@ export class ItemService {
   // Create menu resource
   create(item: any): Observable<any> {
 
-    return this.http.post<any>(`${this.apiUrl}item`, item, {}).pipe(map((data: any)=>{return data}));
+    return this.http.post<any>(`${this.apiUrl}menu-item`, item, {}).pipe(map((data: any)=>{return data}));
   }
 
   //get all item resources
@@ -26,4 +26,8 @@ export class ItemService {
     return this.http.get<any[]>(this.apiUrl + "items");
   }
 
+  //get all item resources
+  getByMenu(id :number): Observable<any[]>  {
+    return this.http.get<any[]>(this.apiUrl + "menu/" + id + "/items");
+  }
 }
